@@ -25,23 +25,25 @@ que3=['''
         constant reminder of Ned's infidelity.
         ''','jon','stark','winterfell','arya','catelyn']
 
-def play_game(updated_que,i):
-    while i<=5:
-        print '\n'+str(i)+'\n'
+def play_game(updated_que,blank_number):
+    while blank_number<=5:
+        print '\n'+str(blank_number)+'\n'
         ans=raw_input(updated_que[0])
-        if ans==updated_que[i]:
-            updated_que[0]=updated_que[0].replace('__'+str(i)+'__',ans)
-            i=i+1
-            play_game(updated_que,i)
+        if ans==updated_que[blank_number]:
+            updated_que[0]=updated_que[0].replace('__'+str(blank_number)+'__',ans)
+            blank_number=blank_number+1
+            play_game(updated_que,blank_number)
+        elif ans=='quit':
+            exit()
         else:
             print '\nTry Again\n'
-            play_game(updated_que,i)
+            play_game(updated_que,blank_number)
     print '\n'+updated_que[0]+'\nThanks for playing. You may exit by entering quit or choose another question.\n'
     start_game()
 
 
 def start_game():
-    que=raw_input('\nWhich question you want to go for?\n 1, 2 or 3?\nEnter quit to exit.')
+    que=raw_input('\nWhich question you want to go for?\n 1, 2 or 3 for easy, medium or hard respectively?\nEnter quit to exit anytime.\n')
     if que=='1':
         play_game(que1,1)
     elif que=='2':
