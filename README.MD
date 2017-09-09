@@ -1,4 +1,4 @@
-#Rev-MadLibs
+Rev-MadLibs
 -------------
 Let's check some of your Game-Of-Thrones knowledge in these fill in the blanks.
 
